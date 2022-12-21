@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css/default-skin.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
 
 
     <!-- Favicons -->
@@ -54,6 +56,7 @@
         .yt-trailer {
             width: 100%;
             height: 300px;
+            margin-bottom: -7px;
         }
 
         .img-poster {
@@ -87,9 +90,14 @@
             }
 
             .img-poster {
-            width: 100%;
-            height: 550px;
-        }
+                width: 100%;
+                height: 550px;
+            }
+
+            .col-3.custom {
+                flex: 0 0 25% !important; 
+                max-width: 25% !important;
+            }
         }
 
         .mt-1 {
@@ -111,12 +119,17 @@
         }
 
         .white-link {
-            color: white; 
+            color: white;
             font-weight: bold;
         }
 
         .white-link:hover {
-            color: rgb(184, 184, 184); 
+            color: rgb(184, 184, 184);
+        }
+
+        .col-3.custom {
+            flex: 0 0 30%; 
+            max-width: 30%;
         }
     </style>
 
@@ -197,7 +210,7 @@
     </header>
     <!-- end header -->
 
-    <section class="section details">
+    <section class="section details" style="margin-top: 50px;">
         <!-- details background -->
         <div class="details__bg" data-bg="img/home/home__bg.jpg"
             style="background: url(&quot;img/home/home__bg.jpg&quot;) center center / cover no-repeat;"></div>
@@ -215,11 +228,15 @@
                     </center>
                 </div>
                 <!-- title -->
-                <div class="col-12 mt-3">
+                <div class="col-12" style="margin-top: 1.5rem;">
                     <center>
                         <h1 class="details__title mempersembahkan">Mempersembahkan</h1>
                     </center>
                 </div>
+
+                <script>
+                    gsap.from(".mempersembahkan", {duration: 3, text: ""})
+                </script>
                 <!-- end title -->
                 <div class="row no-gutter" style="width: 100%;">
                     <div class="col-lg-4">
@@ -227,9 +244,9 @@
                     </div>
                     <div class="col-lg-8">
                         <iframe class="yt-trailer" src="https://www.youtube.com/embed/nbFYtNGSau0"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -292,98 +309,109 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row  mt-3">
-                <div class="container mt-1 ">
-                     <center>
-                                        <h1 class="details__title">Behind The Scene</h1>
-                                    </center>
-                    <div class="row">
-                                       <iframe width="760px" height="auto" src="https://www.youtube.com/embed/R-jxWmt446A"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                        <img style="width: 380px; height: auto; " src="img/covers/poster.jpeg" alt="">
-         
+                <div class="container mt-1 " style="padding: 0px;">
+                    <center>
+                        <h1 class="details__title">Behind The Scene</h1>
+                    </center>
+                    <div class="row no-gutter" style="width: 100%;">
+                        <div class="col-lg-8">
+                            <iframe class="yt-trailer" src="https://www.youtube.com/embed/nbFYtNGSau0"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="col-lg-4">
+                            <img class="img-poster" src="img/covers/poster.jpeg" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row  mt-3" style="align-items: center;">
-                
+
                 <div class="col-1 desktop" style="text-align: center; left: -100px; position: absolute; z-index: 10;">
                     <button id="left-arrow" class="btn text-white bg-secondary"
                         style="background-color: gray; border-radius: 50%; padding: 10px; height: 50px; width: 50px">
                         <i class="fa-solid fa-arrow-left"></i>
                     </button>
                 </div>
-                
+
                 <div class="col-12">
                     <div class="row" id="scrollable" style="flex-wrap: nowrap; overflow-x: hidden;">
 
                         <div class="col-11 mobile_bang" style="background-color: #8d0e0e; padding: 1rem;">
                             <div class="row">
-                                
+
                                 <div class="col-12">
                                     <center>
                                         <h1 class="details__title">a film by</h1>
                                     </center>
                                 </div>
-                                <div class="col-3">
-                                    <center>
-                                        <button
-                                            class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
-                                            onclick="return  $('form#form-appraisal-3').submit()"
-                                            style="display: inline-block;flex: 0 0 auto">
-                                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
-                                                class="rounded-circle img-thumbnail "
-                                                style="width:70px !important;height:70px;object-fit:cover;"> <br>
-                                            <h5 class="feature__title">Sony F Rimba</h5>
-                                            <p class="feature__text">Director</p>
-                                        </button>
-                                    </center>
+                            </div>
+
+                            <div class="row" style="overflow-x: auto;">
+                                <div class="col-12">
+                                    <div class="row" style="flex-wrap: nowrap;">
+                                        <div class="col-3 custom">
+                                            <center>
+                                                <button
+                                                    class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
+                                                    onclick="return  $('form#form-appraisal-3').submit()"
+                                                    style="display: inline-block;flex: 0 0 auto">
+                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
+                                                        class="rounded-circle img-thumbnail "
+                                                        style="width:70px !important;height:70px;object-fit:cover;"> <br>
+                                                    <h5 class="feature__title">Sony F Rimba</h5>
+                                                    <p class="feature__text">Director</p>
+                                                </button>
+                                            </center>
+                                        </div>
+                                        <div class="col-3 custom">
+                                            <center>
+                                                <button
+                                                    class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
+                                                    onclick="return  $('form#form-appraisal-3').submit()"
+                                                    style="display: inline-block;flex: 0 0 auto">
+                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
+                                                        class="rounded-circle img-thumbnail "
+                                                        style="width:70px !important;height:70px;object-fit:cover;"> <br>
+                                                    <h5 class="feature__title">Agus Ismail</h5>
+                                                    <p class="feature__text">Script Writer</p>
+                                                </button>
+                                            </center>
+                                        </div>
+                                        <div class="col-3 custom">
+                                            <center>
+                                                <button
+                                                    class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
+                                                    onclick="return  $('form#form-appraisal-3').submit()"
+                                                    style="display: inline-block;flex: 0 0 auto">
+                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
+                                                        class="rounded-circle img-thumbnail "
+                                                        style="width:70px !important;height:70px;object-fit:cover;"> <br>
+                                                    <h5 class="feature__title">Dwi S Soehardjo</h5>
+                                                    <p class="feature__text">Editor</p>
+                                                </button>
+                                            </center>
+                                        </div>
+                                        <div class="col-3 custom">
+                                            <center>
+                                                <button
+                                                    class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
+                                                    onclick="return  $('form#form-appraisal-3').submit()"
+                                                    style="display: inline-block;flex: 0 0 auto">
+                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
+                                                        class="rounded-circle img-thumbnail "
+                                                        style="width:70px !important;height:70px;object-fit:cover;"> <br>
+                                                    <h5 class="feature__title">Budi Hartono</h5>
+                                                    <p class="feature__text">Produser</p>
+                                                </button>
+                                            </center>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-3">
-                                    <center>
-                                        <button
-                                            class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
-                                            onclick="return  $('form#form-appraisal-3').submit()"
-                                            style="display: inline-block;flex: 0 0 auto">
-                                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
-                                                class="rounded-circle img-thumbnail "
-                                                style="width:70px !important;height:70px;object-fit:cover;"> <br>
-                                            <h5 class="feature__title">Agus Ismail</h5>
-                                            <p class="feature__text">Script Writer</p>
-                                        </button>
-                                    </center>
-                                </div>
-                                <div class="col-3">
-                                    <center>
-                                        <button
-                                            class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
-                                            onclick="return  $('form#form-appraisal-3').submit()"
-                                            style="display: inline-block;flex: 0 0 auto">
-                                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
-                                                class="rounded-circle img-thumbnail "
-                                                style="width:70px !important;height:70px;object-fit:cover;"> <br>
-                                            <h5 class="feature__title">Dwi S Soehardjo</h5>
-                                            <p class="feature__text">Editor</p>
-                                        </button>
-                                    </center>
-                                </div>
-                                <div class="col-3">
-                                    <center>
-                                        <button
-                                            class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
-                                            onclick="return  $('form#form-appraisal-3').submit()"
-                                            style="display: inline-block;flex: 0 0 auto">
-                                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
-                                                class="rounded-circle img-thumbnail "
-                                                style="width:70px !important;height:70px;object-fit:cover;"> <br>
-                                            <h5 class="feature__title">Budi Hartono</h5>
-                                            <p class="feature__text">Produser</p>
-                                        </button>
-                                    </center>
-                                </div>
+                                
                             </div>
                         </div>
 
@@ -404,9 +432,10 @@
                                                     class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
                                                     onclick="return  $('form#form-appraisal-3').submit()"
                                                     style="display: inline-block;flex: 0 0 auto">
-                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
-                                                        class="rounded-circle img-thumbnail "
-                                                        style="width:70px !important;height:70px;object-fit:cover;"> <br>
+                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""
+                                                        srcset="" class="rounded-circle img-thumbnail "
+                                                        style="width:70px !important;height:70px;object-fit:cover;">
+                                                    <br>
                                                     <h5 class="feature__title">D'lya</h5>
                                                     <p class="feature__text">Director</p>
                                                 </button>
@@ -418,9 +447,10 @@
                                                     class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
                                                     onclick="return  $('form#form-appraisal-3').submit()"
                                                     style="display: inline-block;flex: 0 0 auto">
-                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
-                                                        class="rounded-circle img-thumbnail "
-                                                        style="width:70px !important;height:70px;object-fit:cover;"> <br>
+                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""
+                                                        srcset="" class="rounded-circle img-thumbnail "
+                                                        style="width:70px !important;height:70px;object-fit:cover;">
+                                                    <br>
                                                     <h5 class="feature__title">Afox</h5>
                                                     <p class="feature__text">Script Writer</p>
                                                 </button>
@@ -432,9 +462,10 @@
                                                     class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
                                                     onclick="return  $('form#form-appraisal-3').submit()"
                                                     style="display: inline-block;flex: 0 0 auto">
-                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
-                                                        class="rounded-circle img-thumbnail "
-                                                        style="width:70px !important;height:70px;object-fit:cover;"> <br>
+                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""
+                                                        srcset="" class="rounded-circle img-thumbnail "
+                                                        style="width:70px !important;height:70px;object-fit:cover;">
+                                                    <br>
                                                     <h5 class="feature__title">Inggrid Widjanarko</h5>
                                                     <p class="feature__text">Editor</p>
                                                 </button>
@@ -446,9 +477,10 @@
                                                     class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
                                                     onclick="return  $('form#form-appraisal-3').submit()"
                                                     style="display: inline-block;flex: 0 0 auto">
-                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
-                                                        class="rounded-circle img-thumbnail "
-                                                        style="width:70px !important;height:70px;object-fit:cover;"> <br>
+                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""
+                                                        srcset="" class="rounded-circle img-thumbnail "
+                                                        style="width:70px !important;height:70px;object-fit:cover;">
+                                                    <br>
                                                     <h5 class="feature__title">Indra</h5>
                                                     <p class="feature__text">Produser</p>
                                                 </button>
@@ -460,9 +492,10 @@
                                                     class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
                                                     onclick="return  $('form#form-appraisal-3').submit()"
                                                     style="display: inline-block;flex: 0 0 auto">
-                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
-                                                        class="rounded-circle img-thumbnail "
-                                                        style="width:70px !important;height:70px;object-fit:cover;"> <br>
+                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""
+                                                        srcset="" class="rounded-circle img-thumbnail "
+                                                        style="width:70px !important;height:70px;object-fit:cover;">
+                                                    <br>
                                                     <h5 class="feature__title">Hesti</h5>
                                                     <p class="feature__text">Produser</p>
                                                 </button>
@@ -474,9 +507,10 @@
                                                     class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
                                                     onclick="return  $('form#form-appraisal-3').submit()"
                                                     style="display: inline-block;flex: 0 0 auto">
-                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
-                                                        class="rounded-circle img-thumbnail "
-                                                        style="width:70px !important;height:70px;object-fit:cover;"> <br>
+                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""
+                                                        srcset="" class="rounded-circle img-thumbnail "
+                                                        style="width:70px !important;height:70px;object-fit:cover;">
+                                                    <br>
                                                     <h5 class="feature__title">Garin</h5>
                                                     <p class="feature__text">Produser</p>
                                                 </button>
@@ -488,9 +522,10 @@
                                                     class="mb-0 container-gambar text-center p-1 me-1 text-decoration-none border-0 bg-white"
                                                     onclick="return  $('form#form-appraisal-3').submit()"
                                                     style="display: inline-block;flex: 0 0 auto">
-                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="" srcset=""
-                                                        class="rounded-circle img-thumbnail "
-                                                        style="width:70px !important;height:70px;object-fit:cover;"> <br>
+                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""
+                                                        srcset="" class="rounded-circle img-thumbnail "
+                                                        style="width:70px !important;height:70px;object-fit:cover;">
+                                                    <br>
                                                     <h5 class="feature__title">Sena</h5>
                                                     <p class="feature__text">Produser</p>
                                                 </button>
@@ -634,7 +669,7 @@
                 <div class="col-12">
                     <h2 class="section__title section__title--no-margin">Talent</h2>
                 </div>
-                
+
                 <div class="col-12">
                     <div class="row">
 
@@ -645,8 +680,8 @@
 
                                     <div class="col-12 col-sm-5">
                                         <div class="card__cover">
-                                            <img style="width:100%;"
-                                                src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
+                                            <img style="width:100%;" src="https://randomuser.me/api/portraits/men/1.jpg"
+                                                alt="">
 
                                         </div>
                                     </div>
@@ -677,7 +712,7 @@
 
                             </div>
                         </div>
-                        
+
                         <div class="col-4 col-sm-12 col-lg-4" style="padding:1rem !important">
                             <div class="card card--list" style="margin-bottom: 0px;">
 
@@ -685,8 +720,8 @@
 
                                     <div class="col-12 col-sm-5">
                                         <div class="card__cover">
-                                            <img style="width:100%;"
-                                                src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
+                                            <img style="width:100%;" src="https://randomuser.me/api/portraits/men/1.jpg"
+                                                alt="">
 
                                         </div>
                                     </div>
@@ -717,7 +752,7 @@
 
                             </div>
                         </div>
-                        
+
                         <div class="col-4 col-sm-12 col-lg-4" style="padding:1rem !important">
                             <div class="card card--list" style="margin-bottom: 0px;">
 
@@ -725,8 +760,8 @@
 
                                     <div class="col-12 col-sm-5">
                                         <div class="card__cover">
-                                            <img style="width:100%;"
-                                                src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
+                                            <img style="width:100%;" src="https://randomuser.me/api/portraits/men/1.jpg"
+                                                alt="">
 
                                         </div>
                                     </div>
@@ -757,7 +792,7 @@
 
                             </div>
                         </div>
-                        
+
                         <div class="col-4 col-sm-12 col-lg-4" style="padding:1rem !important">
                             <div class="card card--list" style="margin-bottom: 0px;">
 
@@ -765,8 +800,8 @@
 
                                     <div class="col-12 col-sm-5">
                                         <div class="card__cover">
-                                            <img style="width:100%;"
-                                                src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
+                                            <img style="width:100%;" src="https://randomuser.me/api/portraits/men/1.jpg"
+                                                alt="">
 
                                         </div>
                                     </div>
@@ -797,7 +832,7 @@
 
                             </div>
                         </div>
-                        
+
                         <div class="col-4 col-sm-12 col-lg-4" style="padding:1rem !important">
                             <div class="card card--list" style="margin-bottom: 0px;">
 
@@ -805,8 +840,8 @@
 
                                     <div class="col-12 col-sm-5">
                                         <div class="card__cover">
-                                            <img style="width:100%;"
-                                                src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
+                                            <img style="width:100%;" src="https://randomuser.me/api/portraits/men/1.jpg"
+                                                alt="">
 
                                         </div>
                                     </div>
@@ -837,7 +872,7 @@
 
                             </div>
                         </div>
-                        
+
                         <div class="col-4 col-sm-12 col-lg-4" style="padding:1rem !important">
                             <div class="card card--list" style="margin-bottom: 0px;">
 
@@ -845,8 +880,8 @@
 
                                     <div class="col-12 col-sm-5">
                                         <div class="card__cover">
-                                            <img style="width:100%;"
-                                                src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
+                                            <img style="width:100%;" src="https://randomuser.me/api/portraits/men/1.jpg"
+                                                alt="">
 
                                         </div>
                                     </div>
@@ -881,7 +916,7 @@
                         <div class="col-12 col-sm-12 col-lg-12" style="padding:1rem !important">
                             <a href="#" class="white-link">Lihat Lainnya ...</a>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -890,7 +925,7 @@
 
 
     </section>
-    
+
     <section class="section section--dark">
         <div class="container">
             <div class="row">
